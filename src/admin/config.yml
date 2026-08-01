@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: REPLACE_WITH_GITHUB_USERNAME/REPLACE_WITH_REPOSITORY_NAME
+  repo: jlynnsgraphix/daddy-hunger-website
   branch: main
 
 media_folder: "src/assets/uploads"
