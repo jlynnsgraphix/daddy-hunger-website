@@ -1,0 +1,14 @@
+{
+  "name": "daddy-hunger-cms-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daddy Hunger static website with Decap CMS and Netlify Forms",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "node preview.js",
+    "configure-cms": "node configure-cms.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

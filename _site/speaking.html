@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Invite Ray Upchurch for a speaking engagement, interview, fatherhood program, or community event.">
+  <meta property="og:title" content="Invite Ray to Speak | Daddy Hunger">
+  <meta property="og:description" content="Invite Ray Upchurch for a speaking engagement, interview, fatherhood program, or community event.">
+  <meta property="og:type" content="website">
+  <title>Invite Ray to Speak | Daddy Hunger</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">
+    <span>The 10 Commandments of Fatherhood</span>
+    <strong>Coming Fall 2026</strong>
+    <a href="/guide.html#download">Get the free guide</a>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="/index.html" aria-label="Daddy Hunger home">
+      <img src="/assets/daddy-hunger-heart.png" alt="">
+      <span><b>DADDY HUNGER</b><small>Reaching the Heart of Every Child</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="/about.html">About</a>
+      <a href="/book.html">The Book</a>
+      <a href="/guide.html">Free Guide</a>
+      <a class="active" href="/speaking.html">Invite Ray</a>
+      <a href="/shop.html">Shop</a>
+      <a class="nav-button" href="#inquiry">Start an Inquiry</a>
+    </nav>
+  </header>
+<main id="main">
+    <section class="page-hero speaking-hero"><div><p class="eyebrow">Invite Ray to Speak</p><h1>Bring the Daddy Hunger conversation to your community.</h1><p>Selected speaking engagements, interviews, fatherhood programs, and partnership conversations.</p><a class="button primary" href="#inquiry">Start an Inquiry</a></div><div class="ray-portrait-placeholder"><span class="portrait-initials">RU</span><small>Add Ray’s professional portrait in the CMS</small></div></section>
+    <section class="section speaking-types"><div class="section-heading centered"><p class="eyebrow">Engagements</p><h2>Conversations designed for real families and real communities.</h2></div><div class="reader-grid"><article><span>01</span><h3>Keynotes &amp; Talks</h3><p>Fatherhood, healing, emotional presence, responsibility, and legacy.</p></article><article><span>02</span><h3>Radio, TV &amp; Podcasts</h3><p>Interviews about Daddy Hunger, the forthcoming book, and father-family connection.</p></article><article><span>03</span><h3>Schools &amp; Universities</h3><p>Programs for students, parents, educators, counselors, and campus communities.</p></article><article><span>04</span><h3>Churches &amp; Community Groups</h3><p>Honest, hopeful conversations for fathers, families, and service organizations.</p></article></div></section>
+    <section id="inquiry" class="inquiry-section"><div><p class="eyebrow light">Speaking Inquiry</p><h2>Tell us about your event.</h2><p>Share the date, location, audience, goals, and any other details. The form will be saved in Netlify Forms and can also be connected to an email platform or CRM.</p><p><strong>Direct contact:</strong><br><a href="mailto:hello@daddyhunger.org">hello@daddyhunger.org</a></p></div>
+      <form name="speaking-inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="inquiry-form">
+        <input type="hidden" name="form-name" value="speaking-inquiry"><p hidden><label>Do not fill this out: <input name="bot-field"></label></p>
+        <label><span>Name</span><input type="text" name="name" required placeholder="Your name"></label>
+        <label><span>Organization</span><input type="text" name="organization" placeholder="Organization name"></label>
+        <label><span>Email</span><input type="email" name="email" required placeholder="you@example.com"></label>
+        <label><span>Event type</span><select name="eventType"><option value="Speaking engagement">Speaking engagement</option><option value="Radio / TV / podcast interview">Radio / TV / podcast interview</option><option value="Fatherhood program">Fatherhood program</option><option value="School or university event">School or university event</option><option value="Church or community event">Church or community event</option><option value="Partnership conversation">Partnership conversation</option></select></label>
+        <label class="full"><span>Tell us about the opportunity</span><textarea name="details" rows="6" required placeholder="Date, location, audience, goals, and any other details"></textarea></label>
+        <button class="button gold" type="submit">Send the Inquiry</button><p class="form-message full" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><strong>DADDY HUNGER</strong><span>Reaching the Heart of Every Child</span></div>
+    <div class="footer-links">
+      <a href="/about.html">About</a><a href="/book.html">The Book</a><a href="/guide.html">Free Guide</a><a href="/speaking.html">Invite Ray</a><a href="/shop.html">Shop</a>
+    </div>
+    <div class="footer-meta">
+      <span>The 10 Commandments of Fatherhood · Coming Fall 2026</span>
+      <span>© 2026 Ray Upchurch · Daddy Hunger</span>
+      <a href="mailto:hello@daddyhunger.org">hello@daddyhunger.org</a>
+      <a class="admin-link" href="/admin/">Website Admin</a>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>

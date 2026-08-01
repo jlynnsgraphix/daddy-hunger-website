@@ -1,0 +1,52 @@
+{
+  "meta_title": "Shop | Daddy Hunger",
+  "meta_description": "Daddy Hunger merchandise inspired by The 10 Commandments of Fatherhood, coming Fall 2026.",
+  "hero_heading": "Wear the message. Continue the conversation.",
+  "hero_description": "Book-inspired apparel, journals, and gifts are planned for the Fall 2026 launch.",
+  "preview_heading": "A classic burgundy, gold, and cream collection.",
+  "preview_description": "Add final merchandise photography, pricing, and checkout links from the CMS when the products are ready.",
+  "products": [
+    {
+      "name": "Daddy Hunger Tee",
+      "status": "Coming Fall 2026",
+      "image": "",
+      "art_class": "tee-art",
+      "art_primary": "DADDY\nHUNGER",
+      "art_secondary": "KEEP BECOMING",
+      "button_label": "View Product",
+      "product_url": ""
+    },
+    {
+      "name": "Keep Becoming Hoodie",
+      "status": "Coming Fall 2026",
+      "image": "",
+      "art_class": "hoodie-art",
+      "art_primary": "KEEP\nBECOMING",
+      "art_secondary": "DADDY HUNGER",
+      "button_label": "View Product",
+      "product_url": ""
+    },
+    {
+      "name": "Fatherhood Journal",
+      "status": "Coming Fall 2026",
+      "image": "",
+      "art_class": "journal-art",
+      "art_primary": "THE FIVE\nPROMISES",
+      "art_secondary": "FATHERHOOD JOURNAL",
+      "button_label": "View Product",
+      "product_url": ""
+    },
+    {
+      "name": "Daddy Hunger Cap",
+      "status": "Coming Fall 2026",
+      "image": "",
+      "art_class": "cap-art",
+      "art_primary": "DH",
+      "art_secondary": "",
+      "button_label": "View Product",
+      "product_url": ""
+    }
+  ],
+  "notify_heading": "Know when the collection goes live.",
+  "notify_description": "Join the list for merchandise previews, release dates, and book-launch announcements."
+}

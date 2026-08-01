@@ -1,0 +1,271 @@
+backend:
+  name: github
+  repo: REPLACE_WITH_GITHUB_USERNAME/REPLACE_WITH_REPOSITORY_NAME
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Website Content"
+    files:
+      - label: "Global Settings"
+        name: "settings"
+        file: "src/content/settings.json"
+        format: "json"
+        fields:
+          - { label: "Brand Name", name: "brand_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Book Title", name: "book_title", widget: "string" }
+          - { label: "Book Subtitle", name: "book_subtitle", widget: "string" }
+          - { label: "Release Label", name: "release_label", widget: "string", hint: "Example: Coming Fall 2026" }
+          - { label: "Release Short Label", name: "release_short", widget: "string", hint: "Example: Fall 2026" }
+          - { label: "Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Copyright Line", name: "copyright", widget: "string" }
+          - { label: "Heart Logo", name: "heart_logo", widget: "image" }
+          - { label: "Full Daddy Hunger Logo", name: "brand_logo", widget: "image" }
+          - { label: "Book Cover", name: "book_cover", widget: "image" }
+          - { label: "Full Book Cover Spread", name: "book_spread", widget: "image" }
+          - { label: "Free Guide PDF", name: "guide_pdf", widget: "file" }
+          - { label: "Ray Author Photo", name: "author_photo", widget: "image", required: false, hint: "Leave blank to show the RU placeholder." }
+          - { label: "Author Photo Alt Text", name: "author_photo_alt", widget: "string" }
+          - { label: "Announcement Link Label", name: "announcement_link_label", widget: "string" }
+          - { label: "Announcement Link URL", name: "announcement_link_url", widget: "string" }
+
+      - label: "Home Page"
+        name: "home"
+        file: "src/content/home.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero Title Line 1", name: "hero_title_line_1", widget: "string" }
+          - { label: "Hero Title Line 2", name: "hero_title_line_2", widget: "string" }
+          - { label: "Hero Description", name: "hero_lead", widget: "text" }
+          - { label: "Primary Button Label", name: "hero_primary_label", widget: "string" }
+          - { label: "Primary Button URL", name: "hero_primary_url", widget: "string" }
+          - { label: "Secondary Button Label", name: "hero_secondary_label", widget: "string" }
+          - { label: "Secondary Button URL", name: "hero_secondary_url", widget: "string" }
+          - { label: "Featured Quote", name: "featured_quote", widget: "text" }
+          - { label: "Mission Heading", name: "mission_heading", widget: "string" }
+          - label: "Mission Paragraphs"
+            name: "mission_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Five Promises Heading", name: "promises_heading", widget: "string" }
+          - label: "Five Promises"
+            name: "promises"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Guide Section Heading", name: "guide_heading", widget: "string" }
+          - { label: "Guide Section Description", name: "guide_description", widget: "text" }
+          - { label: "Guide Preview Title", name: "guide_preview_title", widget: "string" }
+          - { label: "Guide Preview Description", name: "guide_preview_description", widget: "text" }
+          - { label: "Book Feature Heading", name: "book_feature_heading", widget: "string" }
+          - label: "Book Feature Paragraphs"
+            name: "book_feature_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Ray Section Heading", name: "ray_heading", widget: "string" }
+          - { label: "Ray Section Description", name: "ray_description", widget: "text" }
+          - { label: "Vision Heading", name: "vision_heading", widget: "string" }
+          - { label: "Vision Description", name: "vision_description", widget: "text" }
+          - label: "Vision Cards"
+            name: "vision_cards"
+            widget: "list"
+            fields:
+              - { label: "Small Label", name: "label", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - { label: "Closing Eyebrow", name: "closing_eyebrow", widget: "string" }
+          - { label: "Closing Heading", name: "closing_heading", widget: "text" }
+          - { label: "Closing Line", name: "closing_line", widget: "string" }
+
+      - label: "About Page"
+        name: "about"
+        file: "src/content/about.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - label: "Beginning Paragraphs"
+            name: "origin_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Mission Heading", name: "mission_heading", widget: "string" }
+          - { label: "Mission Introduction", name: "mission_intro", widget: "text" }
+          - label: "Mission Words"
+            name: "mission_words"
+            widget: "list"
+            field: { label: "Word", name: "word", widget: "string" }
+          - label: "Mission Paragraphs"
+            name: "mission_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Ray Heading", name: "ray_heading", widget: "string" }
+          - label: "Ray Intro Paragraphs"
+            name: "ray_intro_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Ray Questions"
+            name: "ray_questions"
+            widget: "list"
+            field: { label: "Question", name: "question", widget: "text" }
+          - label: "Ray Body Paragraphs"
+            name: "ray_body_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Journey Heading", name: "journey_heading", widget: "string" }
+          - label: "Journey Paragraphs"
+            name: "journey_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Journey Impact Statements"
+            name: "journey_impact"
+            widget: "list"
+            field: { label: "Statement", name: "statement", widget: "text" }
+          - { label: "Journey Closing", name: "journey_closing", widget: "text" }
+          - label: "Book Description Paragraphs"
+            name: "book_description_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Featured Quote", name: "featured_quote", widget: "text" }
+          - { label: "Promises Heading", name: "promises_heading", widget: "string" }
+          - label: "Promises"
+            name: "promises"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Vision Heading", name: "vision_heading", widget: "string" }
+          - { label: "Vision Introduction", name: "vision_intro", widget: "text" }
+          - label: "Vision Platform Items"
+            name: "platforms"
+            widget: "list"
+            field: { label: "Platform", name: "platform", widget: "string" }
+          - { label: "Vision Description", name: "vision_description", widget: "text" }
+          - { label: "Vision Quote", name: "vision_quote", widget: "string" }
+          - { label: "Speaking Heading", name: "speaking_heading", widget: "string" }
+          - { label: "Speaking Description", name: "speaking_description", widget: "text" }
+          - { label: "Closing Heading", name: "closing_heading", widget: "text" }
+          - { label: "Closing Description", name: "closing_description", widget: "text" }
+          - { label: "Closing Line", name: "closing_line", widget: "string" }
+
+      - label: "Book Page"
+        name: "book"
+        file: "src/content/book.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero Description", name: "hero_lead", widget: "text" }
+          - { label: "About Heading", name: "about_heading", widget: "string" }
+          - label: "About Paragraphs"
+            name: "about_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Featured Quote", name: "featured_quote", widget: "text" }
+          - { label: "Reader Section Heading", name: "reader_heading", widget: "string" }
+          - label: "Reader Groups"
+            name: "readers"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Launch List Heading", name: "launch_heading", widget: "string" }
+          - { label: "Launch List Description", name: "launch_description", widget: "text" }
+          - { label: "Purchase Button Label", name: "purchase_button_label", widget: "string" }
+          - { label: "Purchase URL", name: "purchase_url", widget: "string", required: false, hint: "Leave blank until sales open." }
+          - { label: "Cover Section Heading", name: "cover_heading", widget: "string" }
+          - { label: "Cover Section Description", name: "cover_description", widget: "text" }
+
+      - label: "Free Guide Page"
+        name: "guide"
+        file: "src/content/guide.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Guide Cover Title", name: "cover_title", widget: "string" }
+          - { label: "Guide Cover Description", name: "cover_description", widget: "text" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - label: "Checklist"
+            name: "checklist"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Preview Heading", name: "preview_heading", widget: "string" }
+          - label: "Promise Cards"
+            name: "promises"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Speaking Page"
+        name: "speaking"
+        file: "src/content/speaking.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Engagement Section Heading", name: "engagement_heading", widget: "string" }
+          - label: "Engagement Types"
+            name: "engagements"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Inquiry Heading", name: "inquiry_heading", widget: "string" }
+          - { label: "Inquiry Description", name: "inquiry_description", widget: "text" }
+          - label: "Event Type Options"
+            name: "event_types"
+            widget: "list"
+            field: { label: "Event Type", name: "event_type", widget: "string" }
+
+      - label: "Shop Page"
+        name: "shop"
+        file: "src/content/shop.json"
+        format: "json"
+        fields:
+          - { label: "SEO Title", name: "meta_title", widget: "string" }
+          - { label: "SEO Description", name: "meta_description", widget: "text" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Collection Preview Heading", name: "preview_heading", widget: "string" }
+          - { label: "Collection Preview Description", name: "preview_description", widget: "text" }
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Status or Price", name: "status", widget: "string" }
+              - { label: "Product Photo", name: "image", widget: "image", required: false, hint: "Leave blank to use the styled placeholder." }
+              - label: "Placeholder Style"
+                name: "art_class"
+                widget: "select"
+                options:
+                  - { label: "T-Shirt", value: "tee-art" }
+                  - { label: "Hoodie", value: "hoodie-art" }
+                  - { label: "Journal", value: "journal-art" }
+                  - { label: "Cap", value: "cap-art" }
+              - { label: "Placeholder Main Text", name: "art_primary", widget: "text", required: false }
+              - { label: "Placeholder Small Text", name: "art_secondary", widget: "string", required: false }
+              - { label: "Button Label", name: "button_label", widget: "string" }
+              - { label: "Product or Checkout URL", name: "product_url", widget: "string", required: false, hint: "Leave blank to hide the button." }
+          - { label: "Notify Section Heading", name: "notify_heading", widget: "string" }
+          - { label: "Notify Section Description", name: "notify_description", widget: "text" }

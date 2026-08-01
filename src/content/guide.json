@@ -1,0 +1,43 @@
+{
+  "meta_title": "Free Fatherhood Guide | Daddy Hunger",
+  "meta_description": "Download the free Daddy Hunger guide: 5 Promises Every Child Needs From Their Father.",
+  "cover_title": "5 Promises Every Child Needs From Their Father",
+  "cover_description": "A practical guide for helping children feel safe, seen, heard, loved, and prepared.",
+  "hero_heading": "Choose one promise. Practice it faithfully. Then keep becoming.",
+  "hero_description": "This short guide gives fathers five clear promises, a short explanation of why each promise matters, and one practical action to take today.",
+  "checklist": [
+    "Help your child feel safe",
+    "Make sure your child feels seen",
+    "Make space for your child to be heard",
+    "Love without making your child earn it",
+    "Prepare your child for life"
+  ],
+  "preview_heading": "Five simple promises with practical next steps.",
+  "promises": [
+    {
+      "number": "01",
+      "title": "I Will Help You Feel Safe",
+      "description": "Listen without humiliation, punishment, or abandonment."
+    },
+    {
+      "number": "02",
+      "title": "I Will Make Sure You Feel Seen",
+      "description": "Notice effort, emotion, interests, questions, and growth."
+    },
+    {
+      "number": "03",
+      "title": "I Will Make Space for You to Be Heard",
+      "description": "Give attention before trying to solve every problem."
+    },
+    {
+      "number": "04",
+      "title": "I Will Love You Without Making You Earn It",
+      "description": "Make love the foundation, not the reward."
+    },
+    {
+      "number": "05",
+      "title": "I Will Help Prepare You for Life",
+      "description": "Model character, teach wisdom, and build confidence."
+    }
+  ]
+}
