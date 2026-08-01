@@ -1,17 +1,45 @@
 {
-  "meta_title": "About Daddy Hunger | Ray Upchurch",
+  "platforms": [
+    "Books and practical resources",
+    "Speaking engagements",
+    "Fatherhood workshops",
+    "Family experiences",
+    "Documentary and media projects",
+    "Community and institutional partnerships",
+    "Transformational events for fathers and families"
+  ],
   "meta_description": "Learn the story, mission, and vision behind Daddy Hunger and its creator, Ray Upchurch.",
-  "hero_heading": "From Daddy Hunger to a New Legacy of Fatherhood",
-  "hero_description": "Helping fathers heal, grow, reconnect, and create a healthier legacy for their children.",
-  "origin_paragraphs": [
-    "Daddy Hunger began with a simple but painful truth: many children grow up longing for the presence, protection, affirmation, and love of a father.",
-    "For Ray Upchurch, that truth was personal.",
-    "Ray grew up without knowing his biological father. Years later, after becoming a father himself, he began to understand how deeply a father’s presence—or absence—can shape a child’s identity, emotional safety, relationships, and future.",
-    "That realization led to the creation of the award-winning documentary Daddy Hunger and years of conversations with fathers, mothers, children, educators, counselors, community leaders, and families across the country.",
-    "Today, Daddy Hunger is becoming something larger: a mission to help fathers heal, grow, reconnect, and create a healthier legacy for their children."
+  "journey_heading": "Conversations that opened the door to healing.",
+  "journey_paragraphs": [
+    "The original Daddy Hunger documentary brought conversations about fatherhood into communities, universities, museums, youth programs, detention facilities, churches, and public forums.",
+    "During those conversations, Ray witnessed the emotional consequences of father absence, father wounds, and unresolved family pain.",
+    "He also witnessed something else:"
+  ],
+  "vision_description": "At the center of that vision is The Daddy Hunger Experience—a future live gathering designed to help fathers confront what shaped them, reconnect with their families, and build a healthier legacy.",
+  "journey_impact": [
+    "Fathers choosing to reconnect.",
+    "Children finding language for what they had carried.",
+    "Families beginning difficult conversations.",
+    "Men deciding that unhealthy cycles would stop with them."
+  ],
+  "vision_quote": "Heal the Father. Reach the Child. Transform the Legacy.",
+  "vision_heading": "The long-term vision extends beyond a book.",
+  "featured_quote": "“The greatest gift you will ever give your child is the father you are still becoming.”",
+  "speaking_description": "Ray is available for selected speaking engagements, interviews, podcasts, radio and television appearances, fatherhood programs, community events, churches, schools, universities, family-service organizations, and partnership conversations.",
+  "ray_body_paragraphs": [
+    "Ray confronted those questions while raising his two sons. Through success, divorce, the collapse of his business during the financial crisis, therapy, rebuilding, and reconciliation, he learned that providing for children is important—but presence, emotional safety, truth, and love are equally essential.",
+    "His sons did not need a perfect father.",
+    "They needed a father who was willing to keep becoming."
+  ],
+  "ray_heading": "Father. Grandfather. Speaker. Filmmaker.",
+  "ray_intro_paragraphs": [
+    "Ray Upchurch is a father, grandfather, speaker, filmmaker, and creator of Daddy Hunger.",
+    "His journey into fatherhood did not begin with a perfect example to follow. It began with questions."
   ],
   "mission_heading": "Every child should feel safe, seen, heard, loved, and prepared.",
-  "mission_intro": "Daddy Hunger exists to help fathers become more present, emotionally healthy, trustworthy, and prepared so that every child can feel:",
+  "closing_description": "Daddy Hunger exists to help fathers make that decision—and to help children experience the safety, love, presence, and preparation they deserve.",
+  "speaking_heading": "Bring the Daddy Hunger conversation to your community.",
+  "vision_intro": "Daddy Hunger is being developed as a platform for:",
   "mission_words": [
     "Safe.",
     "Seen.",
@@ -19,47 +47,14 @@
     "Loved.",
     "Prepared."
   ],
+  "journey_closing": "Those experiences became the foundation for Ray’s forthcoming book, The 10 Commandments of Fatherhood.",
+  "hero_description": "Helping fathers heal, grow, reconnect, and create a healthier legacy for their children.",
+  "closing_heading": "No father can change the past. But every father can decide what happens next.",
   "mission_paragraphs": [
     "We believe fatherhood is not about perfection.",
     "It is about the willingness to keep becoming.",
     "It is about telling the truth, accepting responsibility, repairing what has been damaged, and choosing not to pass unresolved pain to the next generation."
   ],
-  "ray_heading": "Father. Grandfather. Speaker. Filmmaker.",
-  "ray_intro_paragraphs": [
-    "Ray Upchurch is a father, grandfather, speaker, filmmaker, and creator of Daddy Hunger.",
-    "His journey into fatherhood did not begin with a perfect example to follow. It began with questions."
-  ],
-  "ray_questions": [
-    "What does it mean to become a good father when you did not grow up knowing your own?",
-    "How do you protect your children from the wounds, fears, habits, and unfinished parts of your own life?",
-    "How do you remain present through divorce, disappointment, financial loss, and personal change?"
-  ],
-  "ray_body_paragraphs": [
-    "Ray confronted those questions while raising his two sons. Through success, divorce, the collapse of his business during the financial crisis, therapy, rebuilding, and reconciliation, he learned that providing for children is important—but presence, emotional safety, truth, and love are equally essential.",
-    "His sons did not need a perfect father.",
-    "They needed a father who was willing to keep becoming."
-  ],
-  "journey_heading": "Conversations that opened the door to healing.",
-  "journey_paragraphs": [
-    "The original Daddy Hunger documentary brought conversations about fatherhood into communities, universities, museums, youth programs, detention facilities, churches, and public forums.",
-    "During those conversations, Ray witnessed the emotional consequences of father absence, father wounds, and unresolved family pain.",
-    "He also witnessed something else:"
-  ],
-  "journey_impact": [
-    "Fathers choosing to reconnect.",
-    "Children finding language for what they had carried.",
-    "Families beginning difficult conversations.",
-    "Men deciding that unhealthy cycles would stop with them."
-  ],
-  "journey_closing": "Those experiences became the foundation for Ray’s forthcoming book, The 10 Commandments of Fatherhood.",
-  "book_description_paragraphs": [
-    "The 10 Commandments of Fatherhood is a memoir-driven guide to becoming the kind of father whose children feel safe, seen, heard, loved, and prepared.",
-    "Drawing from Ray’s childhood, his experience raising two sons, the lessons of divorce and rebuilding, and the stories encountered through Daddy Hunger, the book offers ten principles for healing, responsibility, connection, and legacy.",
-    "This is not a book about perfect fathers.",
-    "It is a book about fathers who are willing to tell the truth, repair what they can, and keep becoming."
-  ],
-  "featured_quote": "“The greatest gift you will ever give your child is the father you are still becoming.”",
-  "promises_heading": "Five experiences every child deserves.",
   "promises": [
     {
       "title": "Safe",
@@ -82,22 +77,27 @@
       "description": "A child should receive the wisdom, values, confidence, and practical guidance needed to face life."
     }
   ],
-  "vision_heading": "The long-term vision extends beyond a book.",
-  "vision_intro": "Daddy Hunger is being developed as a platform for:",
-  "platforms": [
-    "Books and practical resources",
-    "Speaking engagements",
-    "Fatherhood workshops",
-    "Family experiences",
-    "Documentary and media projects",
-    "Community and institutional partnerships",
-    "Transformational events for fathers and families"
+  "ray_questions": [
+    "What does it mean to become a good father when you did not grow up knowing your own?",
+    "How do you protect your children from the wounds, fears, habits, and unfinished parts of your own life?",
+    "How do you remain present through divorce, disappointment, financial loss, and personal change?"
   ],
-  "vision_description": "At the center of that vision is The Daddy Hunger Experience—a future live gathering designed to help fathers confront what shaped them, reconnect with their families, and build a healthier legacy.",
-  "vision_quote": "Heal the Father. Reach the Child. Transform the Legacy.",
-  "speaking_heading": "Bring the Daddy Hunger conversation to your community.",
-  "speaking_description": "Ray is available for selected speaking engagements, interviews, podcasts, radio and television appearances, fatherhood programs, community events, churches, schools, universities, family-service organizations, and partnership conversations.",
-  "closing_heading": "No father can change the past. But every father can decide what happens next.",
-  "closing_description": "Daddy Hunger exists to help fathers make that decision—and to help children experience the safety, love, presence, and preparation they deserve.",
-  "closing_line": "Keep becoming."
+  "mission_intro": "Daddy Hunger exists to help fathers become more present, emotionally healthy, trustworthy, and prepared so that every child can feel:",
+  "promises_heading": "Five experiences every child deserves.",
+  "hero_heading": "ok From Daddy Hunger to a New Legacy of Fatherhood",
+  "closing_line": "Keep becoming.",
+  "book_description_paragraphs": [
+    "The 10 Commandments of Fatherhood is a memoir-driven guide to becoming the kind of father whose children feel safe, seen, heard, loved, and prepared.",
+    "Drawing from Ray’s childhood, his experience raising two sons, the lessons of divorce and rebuilding, and the stories encountered through Daddy Hunger, the book offers ten principles for healing, responsibility, connection, and legacy.",
+    "This is not a book about perfect fathers.",
+    "It is a book about fathers who are willing to tell the truth, repair what they can, and keep becoming."
+  ],
+  "origin_paragraphs": [
+    "Daddy Hunger began with a simple but painful truth: many children grow up longing for the presence, protection, affirmation, and love of a father.",
+    "For Ray Upchurch, that truth was personal.",
+    "Ray grew up without knowing his biological father. Years later, after becoming a father himself, he began to understand how deeply a father’s presence—or absence—can shape a child’s identity, emotional safety, relationships, and future.",
+    "That realization led to the creation of the award-winning documentary Daddy Hunger and years of conversations with fathers, mothers, children, educators, counselors, community leaders, and families across the country.",
+    "Today, Daddy Hunger is becoming something larger: a mission to help fathers heal, grow, reconnect, and create a healthier legacy for their children."
+  ],
+  "meta_title": "About Daddy Hunger | Ray Upchurch"
 }
