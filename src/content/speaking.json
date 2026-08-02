@@ -1,9 +1,8 @@
 {
-  "meta_title": "Invite Ray to Speak | Daddy Hunger",
   "meta_description": "Invite Ray Upchurch for a speaking engagement, interview, fatherhood program, or community event.",
-  "hero_heading": "Bring the Daddy Hunger conversation to your community.",
-  "hero_description": "Selected speaking engagements, interviews, fatherhood programs, and partnership conversations.",
   "engagement_heading": "Conversations designed for real families and real communities.",
+  "inquiry_description": "Popular presentations\n• The 10 Commandments of Fatherhood\n• Breaking the Cycle\n• The Five Promises Every Child Needs",
+  "inquiry_heading": "Tell us about your event.",
   "engagements": [
     {
       "number": "01",
@@ -26,8 +25,6 @@
       "description": "Honest, hopeful conversations for fathers, families, and service organizations."
     }
   ],
-  "inquiry_heading": "Tell us about your event.",
-  "inquiry_description": "Share the date, location, audience, goals, and any other details. The form will be saved in Netlify Forms and can also be connected to an email platform or CRM.",
   "event_types": [
     "Speaking engagement",
     "Radio / TV / podcast interview",
@@ -35,5 +32,8 @@
     "School or university event",
     "Church or community event",
     "Partnership conversation"
-  ]
+  ],
+  "hero_description": "Selected speaking engagements, interviews, fatherhood programs, and partnership conversations.",
+  "hero_heading": "Bring the Daddy Hunger conversation to your community.",
+  "meta_title": "Invite Ray to Speak | Daddy Hunger"
 }
