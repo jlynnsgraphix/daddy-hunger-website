@@ -346,3 +346,168 @@ p { margin: 0 0 1.25em; }
   opacity: .65;
   font-size: .8rem;
 }
+
+/* Phase 2: dedicated Ray photography, second lead magnet, and media content */
+.hero-photo-stage {
+  position: relative;
+  min-height: 610px;
+  display: grid;
+  align-items: center;
+}
+.hero-photo-frame {
+  position: relative;
+  min-height: 610px;
+  border: 1px solid rgba(104,25,39,.2);
+  background: var(--burgundy-dark);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.hero-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(199,160,82,.55);
+  pointer-events: none;
+}
+.hero-photo-frame img {
+  width: 100%;
+  height: 610px;
+  object-fit: cover;
+  object-position: 28% center;
+}
+.hero-photo-caption {
+  position: absolute;
+  left: -22px;
+  bottom: 28px;
+  z-index: 3;
+  min-width: 235px;
+  padding: 15px 20px;
+  background: var(--burgundy);
+  color: var(--cream);
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 16px 35px rgba(63,14,24,.2);
+}
+.hero-photo-caption span,
+.hero-photo-caption strong { display: block; }
+.hero-photo-caption span { color: var(--gold-light); text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; font-weight: 800; }
+.hero-photo-caption strong { margin-top: 4px; font-family: var(--serif); font-size: 1.15rem; }
+.resource-inline-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold-light);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(222,198,141,.6);
+  padding-bottom: 4px;
+}
+.language-guide-section {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 8vw;
+  align-items: center;
+  background: var(--cream-deep);
+  border-top: 1px solid var(--line);
+}
+.language-guide-art {
+  max-width: 480px;
+  margin: auto;
+  padding: 18px;
+  background: var(--cream-light);
+  border: 1px solid var(--gold);
+  box-shadow: var(--shadow);
+  transform: rotate(-1deg);
+}
+.language-guide-art img { width: 100%; }
+.language-guide-tagline {
+  color: var(--burgundy);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-style: italic;
+}
+.language-guide-copy > p:not(.eyebrow):not(.language-guide-tagline) { color: var(--muted); }
+.resource-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 30px;
+}
+.resource-topics span {
+  padding: 7px 10px;
+  border: 1px solid var(--gold);
+  color: var(--burgundy-dark);
+  background: rgba(255,255,255,.45);
+  font-size: .72rem;
+  font-weight: 700;
+}
+.speaking-photo-panel {
+  background: #9d86d9;
+  overflow: hidden;
+}
+.speaking-photo-panel img {
+  min-height: 520px;
+  object-position: center 20%;
+}
+.media-press-section {
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 7vw;
+  align-items: center;
+  background: var(--cream);
+}
+.media-photo-card {
+  max-width: 420px;
+  margin: auto;
+  padding: 12px;
+  background: var(--burgundy-dark);
+  border: 1px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.media-photo-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+.media-press-section > div:last-child > p:not(.eyebrow) { color: var(--muted); }
+.shop-hero-photo {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--burgundy-dark);
+  box-shadow: var(--shadow);
+}
+.shop-hero-photo img {
+  width: 100%;
+  max-height: none;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+}
+.shop-hero-photo blockquote {
+  margin: 0;
+  padding: 20px 24px;
+  background: var(--burgundy-dark);
+  color: var(--cream);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  border-top: 2px solid var(--gold);
+}
+
+@media (max-width: 900px) {
+  .language-guide-section, .media-press-section { grid-template-columns: 1fr; }
+  .hero-photo-stage, .hero-photo-frame { min-height: 560px; }
+  .hero-photo-frame img { height: 560px; }
+  .hero-photo-caption { left: 18px; }
+  .speaking-photo-panel img { min-height: 480px; }
+}
+
+@media (max-width: 620px) {
+  .hero-photo-stage, .hero-photo-frame { min-height: 440px; }
+  .hero-photo-frame img { height: 440px; object-position: 24% center; }
+  .hero-photo-caption { left: 12px; right: 12px; bottom: 14px; min-width: 0; }
+  .language-guide-section, .media-press-section { padding-left: 22px; padding-right: 22px; }
+  .speaking-photo-panel img { min-height: 420px; }
+  .shop-hero-photo blockquote { font-size: 1rem; }
+}

@@ -1,6 +1,6 @@
 {
-  "meta_title": "Free Fatherhood Guide | Daddy Hunger",
-  "meta_description": "Download the free Daddy Hunger guide: 5 Promises Every Child Needs From Their Father.",
+  "meta_title": "Free Fatherhood Guides | Daddy Hunger",
+  "meta_description": "Download free Daddy Hunger resources, including 5 Promises Every Child Needs From Their Father and The Daddy Hunger Language Guide.",
   "cover_title": "5 Promises Every Child Needs From Their Father",
   "cover_description": "A practical guide for helping children feel safe, seen, heard, loved, and prepared.",
   "hero_heading": "Choose one promise. Practice it faithfully. Then keep becoming.",
@@ -39,5 +39,17 @@
       "title": "I Will Help Prepare You for Life",
       "description": "Model character, teach wisdom, and build confidence."
     }
+  ],
+  "language_guide_heading": "The Daddy Hunger Language Guide",
+  "language_guide_tagline": "Rewriting what we say to our children — one phrase at a time.",
+  "language_guide_description": "Some of the phrases many of us grew up hearing were meant to build strength. This guide offers a different way to say them, using language that can build strength and connection, discipline and safety.",
+  "language_guide_button_label": "Send Me the Language Guide",
+  "language_guide_topics": [
+    "Men & fathers",
+    "Discipline",
+    "Mistakes & failure",
+    "Vulnerability & manhood",
+    "Love & affection",
+    "Trust & independence"
   ]
 }

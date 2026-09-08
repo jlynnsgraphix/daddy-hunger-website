@@ -27,9 +27,21 @@ collections:
           - { label: "Full Daddy Hunger Logo", name: "brand_logo", widget: "image" }
           - { label: "Book Cover", name: "book_cover", widget: "image" }
           - { label: "Full Book Cover Spread", name: "book_spread", widget: "image" }
-          - { label: "Free Guide PDF", name: "guide_pdf", widget: "file" }
-          - { label: "Ray Author Photo", name: "author_photo", widget: "image", required: false, hint: "Leave blank to show the RU placeholder." }
-          - { label: "Author Photo Alt Text", name: "author_photo_alt", widget: "string" }
+          - { label: "Five Promises Guide PDF", name: "guide_pdf", widget: "file" }
+          - { label: "Daddy Hunger Language Guide PDF", name: "language_guide_pdf", widget: "file" }
+          - { label: "Language Guide Cover Image", name: "language_guide_cover", widget: "image" }
+          - { label: "Homepage Hero Photo", name: "home_hero_photo", widget: "image" }
+          - { label: "Homepage Hero Photo Alt Text", name: "home_hero_photo_alt", widget: "string" }
+          - { label: "About Ray Photo", name: "about_photo", widget: "image" }
+          - { label: "About Ray Photo Alt Text", name: "about_photo_alt", widget: "string" }
+          - { label: "Speaking Hero Photo", name: "speaking_photo", widget: "image" }
+          - { label: "Speaking Photo Alt Text", name: "speaking_photo_alt", widget: "string" }
+          - { label: "Media / Press Photo", name: "media_photo", widget: "image" }
+          - { label: "Media / Press Photo Alt Text", name: "media_photo_alt", widget: "string" }
+          - { label: "Shop / Quote Photo", name: "shop_quote_photo", widget: "image" }
+          - { label: "Shop / Quote Photo Alt Text", name: "shop_quote_photo_alt", widget: "string" }
+          - { label: "Legacy Author Photo", name: "author_photo", widget: "image", required: false, hint: "Kept for compatibility; use the dedicated photo fields above for new edits." }
+          - { label: "Legacy Author Photo Alt Text", name: "author_photo_alt", widget: "string" }
           - { label: "Announcement Link Label", name: "announcement_link_label", widget: "string" }
           - { label: "Announcement Link URL", name: "announcement_link_url", widget: "string" }
 
@@ -204,6 +216,14 @@ collections:
             widget: "list"
             field: { label: "Item", name: "item", widget: "string" }
           - { label: "Preview Heading", name: "preview_heading", widget: "string" }
+          - { label: "Language Guide Heading", name: "language_guide_heading", widget: "string" }
+          - { label: "Language Guide Tagline", name: "language_guide_tagline", widget: "string" }
+          - { label: "Language Guide Description", name: "language_guide_description", widget: "text" }
+          - { label: "Language Guide Button Label", name: "language_guide_button_label", widget: "string" }
+          - label: "Language Guide Topics"
+            name: "language_guide_topics"
+            widget: "list"
+            field: { label: "Topic", name: "topic", widget: "string" }
           - label: "Promise Cards"
             name: "promises"
             widget: "list"
@@ -229,6 +249,8 @@ collections:
               - { label: "Number", name: "number", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+          - { label: "Media / Press Heading", name: "media_heading", widget: "string" }
+          - { label: "Media / Press Description", name: "media_description", widget: "text" }
           - { label: "Inquiry Heading", name: "inquiry_heading", widget: "string" }
           - { label: "Inquiry Description", name: "inquiry_description", widget: "text" }
           - label: "Event Type Options"
