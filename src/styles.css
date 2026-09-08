@@ -511,3 +511,29 @@ p { margin: 0 0 1.25em; }
   .speaking-photo-panel img { min-height: 420px; }
   .shop-hero-photo blockquote { font-size: 1rem; }
 }
+
+/* Kit email forms */
+.kit-signup-form .formkit-fields { display: grid; gap: 13px; width: 100%; }
+.kit-signup-form .formkit-field { min-width: 0; }
+.kit-signup-form .formkit-submit { margin: 0; width: 100%; }
+.kit-signup-form .formkit-submit > span { display: block; }
+.kit-signup-form .formkit-alert { list-style: none; margin: 0; padding: 0; }
+.kit-signup-form .formkit-alert:empty { display: none; }
+.kit-signup-form .formkit-alert-error { color: #ffd9d9; font-size: .8rem; font-weight: 700; }
+.kit-signup-form.light-form .formkit-alert-error { color: var(--burgundy); }
+.kit-signup-form.home-kit-form .formkit-fields { grid-template-columns: 1fr 1.4fr; }
+.kit-signup-form.home-kit-form .formkit-submit { grid-column: 1 / -1; }
+.kit-signup-form.compact-form { display: grid; grid-template-columns: 1fr; }
+.kit-signup-form.compact-form .formkit-fields { grid-template-columns: 1fr 1fr; }
+.kit-signup-form.compact-form .formkit-submit { grid-column: 1 / -1; }
+.kit-signup-form .formkit-powered-by-convertkit-container { margin-top: 2px; }
+.kit-signup-form .formkit-powered-by-convertkit { color: inherit; font-size: .67rem; opacity: .65; text-decoration: none; }
+.kit-signup-form .formkit-powered-by-convertkit:hover { opacity: 1; text-decoration: underline; }
+.kit-signup-form.light-form .formkit-powered-by-convertkit { color: var(--muted); }
+
+@media (max-width: 720px) {
+  .kit-signup-form.home-kit-form .formkit-fields,
+  .kit-signup-form.compact-form .formkit-fields { grid-template-columns: 1fr; }
+  .kit-signup-form.home-kit-form .formkit-submit,
+  .kit-signup-form.compact-form .formkit-submit { grid-column: auto; }
+}
