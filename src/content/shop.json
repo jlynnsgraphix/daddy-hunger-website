@@ -1,15 +1,10 @@
 {
-  "meta_title": "Shop | Daddy Hunger",
   "meta_description": "Daddy Hunger merchandise inspired by The 10 Commandments of Fatherhood, coming Fall 2026.",
-  "hero_heading": "Wear the message. Continue the conversation.",
-  "hero_description": "Daddy Hunger apparel and book-inspired merchandise are being developed for the Fall 2026 launch. Join the list for previews and release updates.",
-  "preview_heading": "A classic burgundy, gold, and cream collection.",
-  "preview_description": "Add final merchandise photography, pricing, and checkout links from the CMS when the products are ready.",
   "products": [
     {
       "name": "Daddy Hunger Tee",
       "status": "Coming Fall 2026",
-      "image": "",
+      "image": "/assets/uploads/burgundy-daddy-hunger-tee-front-and-back-5.png",
       "art_class": "tee-art",
       "art_primary": "DADDY\nHUNGER",
       "art_secondary": "KEEP BECOMING",
@@ -19,7 +14,7 @@
     {
       "name": "Keep Becoming Hoodie",
       "status": "Coming Fall 2026",
-      "image": "",
+      "image": "/assets/uploads/premium-black-daddy-hunger-hoodie-mockup-4.png",
       "art_class": "hoodie-art",
       "art_primary": "KEEP\nBECOMING",
       "art_secondary": "DADDY HUNGER",
@@ -29,7 +24,7 @@
     {
       "name": "Fatherhood Journal",
       "status": "Coming Fall 2026",
-      "image": "",
+      "image": "/assets/uploads/maple-heart-quote-journal-mockup-6.png",
       "art_class": "journal-art",
       "art_primary": "THE FIVE\nPROMISES",
       "art_secondary": "FATHERHOOD JOURNAL",
@@ -39,7 +34,7 @@
     {
       "name": "Daddy Hunger Cap",
       "status": "Coming Fall 2026",
-      "image": "",
+      "image": "/assets/uploads/black-cap-with-embroidered-heart-logo-3.png",
       "art_class": "cap-art",
       "art_primary": "DH",
       "art_secondary": "",
@@ -47,6 +42,11 @@
       "product_url": ""
     }
   ],
+  "preview_description": "Add final merchandise photography, pricing, and checkout links from the CMS when the products are ready.",
+  "notify_description": "Join the list for merchandise previews, release dates, and book-launch announcements.",
+  "preview_heading": "A classic burgundy, gold, and cream collection.",
   "notify_heading": "Know when the collection goes live.",
-  "notify_description": "Join the list for merchandise previews, release dates, and book-launch announcements."
+  "hero_description": "Daddy Hunger apparel and book-inspired merchandise are being developed for the Fall 2026 launch. Join the list for previews and release updates.",
+  "hero_heading": "Wear the message. Continue the conversation.",
+  "meta_title": "Shop | Daddy Hunger"
 }
