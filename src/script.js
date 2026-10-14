@@ -59,7 +59,7 @@ document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
     } catch (error) {
       console.error(error);
       if (message) {
-        message.textContent = 'The form could not be submitted. Please try again or email hello@daddyhunger.org.';
+        message.textContent = 'The form could not be submitted. Please try again or email Ray@daddyhunger.org.';
         message.classList.add('form-status-error');
       }
     } finally {

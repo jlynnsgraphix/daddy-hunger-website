@@ -36,7 +36,8 @@
   "launch_heading": "Join the Fall 2026 book launch.",
   "launch_description": "Receive the release date, preorder information, event announcements, interviews, and selected excerpts.",
   "purchase_button_label": "Buy the Book",
-  "purchase_url": "",
+  "purchase_url": "https://bookspace.com/daddy-hunger-press",
   "cover_heading": "The new cover for The 10 Commandments of Fatherhood.",
-  "cover_description": "Deep burgundy, cream typography, and gold accents carry the Daddy Hunger visual identity into the book. The book is currently in final editing and will remain in Coming Soon status until the purchase link is live."
+  "cover_description": "Deep burgundy, cream typography, and gold accents carry the Daddy Hunger visual identity into the book. The book is currently in final editing and will remain in Coming Soon status until the purchase link is live.",
+  "amazon_url": "https://www.amazon.com/dp/B0HMFP38HG"
 }

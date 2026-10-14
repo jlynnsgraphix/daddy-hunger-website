@@ -196,7 +196,8 @@ collections:
           - { label: "Launch List Heading", name: "launch_heading", widget: "string" }
           - { label: "Launch List Description", name: "launch_description", widget: "text" }
           - { label: "Purchase Button Label", name: "purchase_button_label", widget: "string" }
-          - { label: "Purchase URL", name: "purchase_url", widget: "string", required: false, hint: "Leave blank until sales open." }
+          - { label: "Bookspace Purchase URL", name: "purchase_url", widget: "string", required: false }
+          - { label: "Amazon Purchase URL", name: "amazon_url", widget: "string", required: false }
           - { label: "Cover Section Heading", name: "cover_heading", widget: "string" }
           - { label: "Cover Section Description", name: "cover_description", widget: "text" }
 

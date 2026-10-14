@@ -104,12 +104,30 @@ function pageShell({ settings, title, description, active, ctaLabel, ctaUrl, ann
   <title>${esc(title)}</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function(w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t);
+      sm.async = true;
+      sm.type = 'module';
+      sm.src = h + s + '.mjs' + v;
+      f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t);
+      sn.async = true;
+      sn.noModule = true;
+      sn.src = h + s + '.js' + v;
+      f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+  </script>
 </head>
 <body>
 ${header(settings, active, ctaLabel, ctaUrl, announcementUrl)}
 ${body}
 ${footer(settings)}
-  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script src="/script.js"></script>
 </body>
 </html>`;
@@ -142,45 +160,35 @@ function signupForm({ formName, classes = '', download = '', buttonLabel, note =
   </form>`;
 }
 
-const KIT_FORMS = {
-  fivePromises: { id: '9896326', uid: '64516cc0d3' },
-  languageGuide: { id: '9896338', uid: '1e4aafb24c' },
-  bookLaunch: { id: '9896342', uid: '83dac68cbe' },
+const FLODESK_FORMS = {
+  fivePromises: '6aab0126550f7ff55ab1c843',
+  languageGuide: '6aab0093dad3d9ab0d81c8e7',
 };
 
-function kitSignupForm({ kitForm, classes = '', buttonLabel, note = '' }) {
-  const config = KIT_FORMS[kitForm];
-  if (!config) throw new Error(`Unknown Kit form: ${kitForm}`);
-  const options = JSON.stringify({
-    settings: {
-      after_subscribe: {
-        action: 'message',
-        success_message: 'Success! Now check your email to confirm your subscription.',
-        redirect_url: '',
-      },
-      powered_by: {
-        show: true,
-        url: 'https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic',
-      },
-      recaptcha: { enabled: false },
-      return_visitor: { action: 'show', custom_content: '' },
-    },
-    version: '5',
-  });
-
-  return `<form action="https://app.kit.com/forms/${config.id}/subscriptions" class="seva-form formkit-form signup-form kit-signup-form ${esc(classes)}" method="post" data-sv-form="${config.id}" data-uid="${config.uid}" data-format="inline" data-version="5" data-options="${esc(options)}">
-    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-      <div class="formkit-field"><label><span>First name</span><input class="formkit-input" aria-label="First Name" name="fields[first_name]" autocomplete="given-name" required placeholder="First name" type="text"></label></div>
-      <div class="formkit-field"><label><span>Email address</span><input class="formkit-input" name="email_address" autocomplete="email" aria-label="Email Address" placeholder="you@example.com" required type="email"></label></div>
-      <button data-element="submit" class="formkit-submit button ${classes.includes('light-form') ? 'primary' : 'gold'}" type="submit"><span>${esc(buttonLabel)}</span></button>
-    </div>
-    ${note ? `<p class="form-note">${esc(note)}</p>` : ''}
-    <div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a></div>
-  </form>`;
+function flodeskForm(formKey, classes = '') {
+  const formId = FLODESK_FORMS[formKey];
+  if (!formId) throw new Error(`Unknown Flodesk form: ${formKey}`);
+  return `<div class="flodesk-form-shell ${esc(classes)}">
+    <div id="fd-form-${formId}"></div>
+    <script>
+      window.fd('form', {
+        formId: '${formId}',
+        containerEl: '#fd-form-${formId}'
+      });
+    <\/script>
+  </div>`;
 }
 
-function renderHome(settings, home) {
+function bookPurchaseLinks(book, extraClass = '') {
+  if (!book.purchase_url) return '';
+  const amazon = book.amazon_url || '';
+  return `<div class="book-purchase-block ${esc(extraClass)}">
+    <a class="button primary" href="${esc(book.purchase_url)}" target="_blank" rel="noopener noreferrer">${esc(book.purchase_button_label || 'Buy the Book')}</a>
+    ${amazon ? `<p class="amazon-note">Amazon Prime member? You can also <a href="${esc(amazon)}" target="_blank" rel="noopener noreferrer">order on Amazon</a> with free Prime shipping.</p>` : ''}
+  </div>`;
+}
+
+function renderHome(settings, home, book) {
   const promiseCards = home.promises.map((p) => `<article class="promise-card"><span>${esc(p.number)}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></article>`).join('');
   const visionCards = home.vision_cards.map((card) => `<a href="${esc(card.url)}"><span>${esc(card.label)}</span><strong>${esc(card.title)}</strong><i>→</i></a>`).join('');
   const body = `<main id="main">
@@ -204,11 +212,11 @@ function renderHome(settings, home) {
     <section id="guide" class="guide-section">
       <div class="guide-preview"><div class="guide-sheet guide-sheet-back"></div><div class="guide-sheet guide-sheet-front"><span class="mini-brand">${esc(settings.brand_name)}</span><h3>${esc(home.guide_preview_title)}</h3><p>${esc(home.guide_preview_description)}</p><div class="guide-lines"><i></i><i></i><i></i><i></i><i></i></div><strong>FREE GUIDE</strong></div></div>
       <div class="guide-content"><p class="eyebrow light">Free Fatherhood Guide</p><h2>${esc(home.guide_heading)}</h2><p>${esc(home.guide_description)}</p>
-        ${kitSignupForm({ kitForm: 'fivePromises', classes: 'home-kit-form', buttonLabel: 'Send Me the Free Guide', note: 'Check your email to confirm your subscription and receive the Five Promises Guide. You will also receive selected book-launch and Daddy Hunger updates. Unsubscribe anytime.' })}
+        ${flodeskForm('fivePromises', 'home-flodesk-form')}
         <a class="resource-inline-link" href="/guide.html#language-guide">Also available: The Daddy Hunger Language Guide →</a>
       </div>
     </section>
-    <section class="section book-feature"><div class="book-feature-image"><img src="${esc(settings.book_spread)}" alt="Front, spine, and back cover for ${esc(settings.book_title)}"></div><div class="book-feature-copy"><p class="eyebrow">Coming Fall 2026</p><h2>${esc(home.book_feature_heading)}</h2>${paragraphs(home.book_feature_paragraphs)}<div class="button-row"><a class="button primary" href="/book.html">Learn About the Book</a><a class="button text-button" href="/book.html#launch">Join the Launch List</a></div></div></section>
+    <section class="section book-feature"><div class="book-feature-image"><img src="${esc(settings.book_spread)}" alt="Front, spine, and back cover for ${esc(settings.book_title)}"></div><div class="book-feature-copy"><p class="eyebrow">Coming Fall 2026</p><h2>${esc(home.book_feature_heading)}</h2>${paragraphs(home.book_feature_paragraphs)}<div class="button-row"><a class="button outline" href="/book.html">Learn About the Book</a></div>${bookPurchaseLinks(book)}</div></section>
     <section class="ray-section">${portrait(settings)}<div class="ray-copy"><p class="eyebrow light">About Ray Upchurch</p><h2>${esc(home.ray_heading)}</h2><p>${esc(home.ray_description)}</p><a class="button gold" href="/about.html">Meet Ray</a></div></section>
     <section class="section vision-section"><div class="section-heading centered narrow"><p class="eyebrow">The Vision</p><h2>${esc(home.vision_heading)}</h2><p>${esc(home.vision_description)}</p></div><div class="vision-grid">${visionCards}</div></section>
     <section class="closing-cta"><img src="${esc(settings.heart_logo)}" alt="" class="closing-mark"><p class="eyebrow light">${esc(home.closing_eyebrow)}</p><h2>${esc(home.closing_heading)}</h2><p>${esc(home.closing_line)}</p><a class="button gold" href="/guide.html">Get a Free Guide</a></section>
@@ -244,13 +252,12 @@ function renderAbout(settings, about) {
 
 function renderBook(settings, book) {
   const readers = book.readers.map((r) => `<article><span>${esc(r.number)}</span><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p></article>`).join('');
-  const purchaseButton = book.purchase_url ? `<a class="button outline" href="${esc(book.purchase_url)}">${esc(book.purchase_button_label)}</a>` : '';
   const body = `<main id="main">
-    <section class="book-page-hero"><div class="book-page-art"><div class="book-object large"><div class="book-spine"></div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"><div class="book-author">RAY UPCHURCH</div></div></div><div class="book-page-copy"><p class="eyebrow">${esc(book.hero_eyebrow)}</p><h1>${esc(settings.book_title)}</h1><p class="hero-subtitle">${esc(settings.book_subtitle)}</p><p class="hero-lead">${esc(book.hero_lead)}</p><p class="release-pill">Book Release · ${esc(settings.release_short)}</p><div class="button-row"><a class="button primary" href="/guide.html">Join the Book Launch List</a>${purchaseButton}</div></div></section>
+    <section class="book-page-hero"><div class="book-page-art"><div class="book-object large"><div class="book-spine"></div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"><div class="book-author">RAY UPCHURCH</div></div></div><div class="book-page-copy"><p class="eyebrow">${esc(book.hero_eyebrow)}</p><h1>${esc(settings.book_title)}</h1><p class="hero-subtitle">${esc(settings.book_subtitle)}</p><p class="hero-lead">${esc(book.hero_lead)}</p><p class="release-pill">Book Release · ${esc(settings.release_short)}</p>${bookPurchaseLinks(book, 'book-hero-purchase')}</div></section>
     <section class="section book-description"><div><p class="eyebrow">About the Book</p><h2>${esc(book.about_heading)}</h2></div><div>${paragraphs(book.about_paragraphs)}</div></section>
     <section class="quote-band"><div class="ornament">◆</div><blockquote>${esc(book.featured_quote)}</blockquote><div class="ornament">◆</div></section>
     <section class="section reader-section"><div class="section-heading centered narrow"><p class="eyebrow">Who This Book Is For</p><h2>${esc(book.reader_heading)}</h2></div><div class="reader-grid">${readers}</div></section>
-    <section id="launch" class="launch-list-section"><div><p class="eyebrow light">Be First to Know</p><h2>${esc(book.launch_heading)}</h2><p>${esc(book.launch_description)}</p></div>${kitSignupForm({ kitForm: 'bookLaunch', classes: 'compact-form', buttonLabel: 'Join the Launch List', note: 'Check your email to confirm your subscription.' })}</section>
+    <section id="buy" class="launch-list-section book-buy-section"><div><p class="eyebrow light">The Book</p><h2>Get ${esc(settings.book_title)}.</h2><p>Order directly from Daddy Hunger Press through Bookspace, or use Amazon for Prime shipping.</p></div>${bookPurchaseLinks(book, 'dark-purchase')}</section>
     <section class="section cover-section"><div><img src="${esc(settings.book_spread)}" alt="Full book cover concept"></div><div><p class="eyebrow">Book Cover</p><h2>${esc(book.cover_heading)}</h2><p>${esc(book.cover_description)}</p><a class="text-link" href="/shop.html">Preview the merchandise direction <span>→</span></a></div></section>
   </main>`;
   return pageShell({ settings, title: book.meta_title, description: book.meta_description, active: 'book', ctaLabel: 'Join the List', ctaUrl: '/guide.html', body });
@@ -261,13 +268,13 @@ function renderGuide(settings, guide) {
   const promises = guide.promises.map((p) => `<article class="promise-card"><span>${esc(p.number)}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></article>`).join('');
   const languageTopics = (guide.language_guide_topics || []).map((item) => `<span>${esc(item)}</span>`).join('');
   const body = `<main id="main">
-    <section id="download" class="guide-page-hero"><div class="guide-cover-large"><span>${esc(settings.brand_name)}</span><h1>${esc(guide.cover_title)}</h1><p>${esc(guide.cover_description)}</p><div class="guide-five"><i>SAFE</i><i>SEEN</i><i>HEARD</i><i>LOVED</i><i>PREPARED</i></div></div><div class="guide-page-copy"><p class="eyebrow">Free Fatherhood Guide</p><h2>${esc(guide.hero_heading)}</h2><p>${esc(guide.hero_description)}</p><ul class="check-list">${checks}</ul>${kitSignupForm({ kitForm: 'fivePromises', classes: 'light-form', buttonLabel: 'Send Me the Five Promises Guide', note: 'Check your email to confirm your subscription and receive the guide. You will also receive selected Daddy Hunger and book-launch updates.' })}</div></section>
+    <section id="download" class="guide-page-hero"><div class="guide-cover-large"><span>${esc(settings.brand_name)}</span><h1>${esc(guide.cover_title)}</h1><p>${esc(guide.cover_description)}</p><div class="guide-five"><i>SAFE</i><i>SEEN</i><i>HEARD</i><i>LOVED</i><i>PREPARED</i></div></div><div class="guide-page-copy"><p class="eyebrow">Free Fatherhood Guide</p><h2>${esc(guide.hero_heading)}</h2><p>${esc(guide.hero_description)}</p><ul class="check-list">${checks}</ul>${flodeskForm('fivePromises', 'guide-flodesk-form')}</div></section>
     <section class="section promises-preview"><div class="section-heading centered"><p class="eyebrow">Inside the Guide</p><h2>${esc(guide.preview_heading)}</h2></div><div class="promise-grid">${promises}</div></section>
     <section id="language-guide" class="section language-guide-section">
       <div class="language-guide-art"><img src="${esc(settings.language_guide_cover)}" alt="Cover of ${esc(guide.language_guide_heading)}"></div>
-      <div class="language-guide-copy"><p class="eyebrow">Another Free Resource</p><h2>${esc(guide.language_guide_heading)}</h2><p class="language-guide-tagline">${esc(guide.language_guide_tagline)}</p><p>${esc(guide.language_guide_description)}</p><div class="resource-topics">${languageTopics}</div>${kitSignupForm({ kitForm: 'languageGuide', classes: 'light-form', buttonLabel: guide.language_guide_button_label, note: 'Check your email to confirm your subscription and receive the Language Guide.' })}</div>
+      <div class="language-guide-copy"><p class="eyebrow">Another Free Resource</p><h2>${esc(guide.language_guide_heading)}</h2><p class="language-guide-tagline">${esc(guide.language_guide_tagline)}</p><p>${esc(guide.language_guide_description)}</p><div class="resource-topics">${languageTopics}</div>${flodeskForm('languageGuide', 'guide-flodesk-form')}</div>
     </section>
-    <section class="closing-cta"><img src="${esc(settings.heart_logo)}" alt="" class="closing-mark"><p class="eyebrow light">${esc(settings.release_label)}</p><h2>${esc(settings.book_title)}</h2><p>${esc(settings.book_subtitle)}</p><a class="button gold" href="/book.html#launch">Join the Book Launch List</a></section>
+    <section class="closing-cta"><img src="${esc(settings.heart_logo)}" alt="" class="closing-mark"><p class="eyebrow light">${esc(settings.release_label)}</p><h2>${esc(settings.book_title)}</h2><p>${esc(settings.book_subtitle)}</p><a class="button gold" href="/book.html#buy">Buy the Book</a></section>
   </main>`;
   return pageShell({ settings, title: guide.meta_title, description: guide.meta_description, active: 'guide', ctaLabel: 'Free Guides', ctaUrl: '#download', announcementUrl: '#download', body });
 }
@@ -283,6 +290,7 @@ function renderSpeaking(settings, speaking) {
       <form name="speaking-inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="inquiry-form">
         ${hiddenFormFields('speaking-inquiry')}
         <input type="hidden" name="interest" value="speaking-media">
+        <input type="hidden" name="subject" data-remove-prefix value="New Daddy Hunger speaking inquiry">
         <label><span>Name</span><input type="text" name="name" required placeholder="Your name"></label>
         <label><span>Organization</span><input type="text" name="organization" placeholder="Organization name"></label>
         <label><span>Email</span><input type="email" name="email" required placeholder="you@example.com"></label>
@@ -332,7 +340,7 @@ function build() {
   fs.copyFileSync(path.join(SRC, 'styles.css'), path.join(OUT, 'styles.css'));
   fs.copyFileSync(path.join(SRC, 'script.js'), path.join(OUT, 'script.js'));
 
-  writeFile('index.html', renderHome(settings, home));
+  writeFile('index.html', renderHome(settings, home, book));
   writeFile('about.html', renderAbout(settings, about));
   writeFile('book.html', renderBook(settings, book));
   writeFile('guide.html', renderGuide(settings, guide));
