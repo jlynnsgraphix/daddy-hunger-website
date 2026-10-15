@@ -199,7 +199,7 @@ function renderHome(settings, home, book) {
         <p class="hero-subtitle">${esc(settings.book_subtitle)}</p>
         <p class="hero-lead">${esc(home.hero_lead)}</p>
         <div class="hero-actions"><a class="button primary" href="${esc(home.hero_primary_url)}">${esc(home.hero_primary_label)}</a><a class="button outline" href="${esc(home.hero_secondary_url)}">${esc(home.hero_secondary_label)}</a></div>
-        <p class="launch-note"><span>Book release</span> ${esc(settings.release_short)}</p>
+        <p class="launch-note">${esc(settings.release_short)}</p>
       </div>
       <div class="hero-photo-stage reveal">
         <div class="hero-photo-frame"><img src="${esc(settings.home_hero_photo)}" alt="${esc(settings.home_hero_photo_alt)}"></div>
@@ -216,7 +216,7 @@ function renderHome(settings, home, book) {
         <a class="resource-inline-link" href="/guide.html#language-guide">Also available: The Daddy Hunger Language Guide →</a>
       </div>
     </section>
-    <section class="section book-feature"><div class="book-feature-image"><img src="${esc(settings.book_spread)}" alt="Front, spine, and back cover for ${esc(settings.book_title)}"></div><div class="book-feature-copy"><p class="eyebrow">Coming Fall 2026</p><h2>${esc(home.book_feature_heading)}</h2>${paragraphs(home.book_feature_paragraphs)}<div class="button-row"><a class="button outline" href="/book.html">Learn About the Book</a></div>${bookPurchaseLinks(book)}</div></section>
+    <section class="section book-feature"><div class="book-feature-image"><img src="${esc(settings.book_spread)}" alt="Front, spine, and back cover for ${esc(settings.book_title)}"></div><div class="book-feature-copy"><p class="eyebrow">${esc(settings.release_label)}</p><h2>${esc(home.book_feature_heading)}</h2>${paragraphs(home.book_feature_paragraphs)}<div class="button-row"><a class="button outline" href="/book.html">Learn About the Book</a></div>${bookPurchaseLinks(book)}</div></section>
     <section class="ray-section">${portrait(settings)}<div class="ray-copy"><p class="eyebrow light">About Ray Upchurch</p><h2>${esc(home.ray_heading)}</h2><p>${esc(home.ray_description)}</p><a class="button gold" href="/about.html">Meet Ray</a></div></section>
     <section class="section vision-section"><div class="section-heading centered narrow"><p class="eyebrow">The Vision</p><h2>${esc(home.vision_heading)}</h2><p>${esc(home.vision_description)}</p></div><div class="vision-grid">${visionCards}</div></section>
     <section class="closing-cta"><img src="${esc(settings.heart_logo)}" alt="" class="closing-mark"><p class="eyebrow light">${esc(home.closing_eyebrow)}</p><h2>${esc(home.closing_heading)}</h2><p>${esc(home.closing_line)}</p><a class="button gold" href="/guide.html">Get a Free Guide</a></section>
@@ -239,7 +239,7 @@ function renderAbout(settings, about) {
         <section id="mission" class="story-section emphasized"><p class="eyebrow">Our Mission</p><h2>${esc(about.mission_heading)}</h2><p>${esc(about.mission_intro)}</p><div class="five-word-row">${missionWords}</div>${paragraphs(about.mission_paragraphs)}</section>
         <section id="ray" class="story-section split-story">${portrait(settings, true)}<div><p class="eyebrow">About Ray Upchurch</p><h2>${esc(about.ray_heading)}</h2>${paragraphs(about.ray_intro_paragraphs)}${rayQuestions}${about.ray_body_paragraphs.map((p, i) => i === about.ray_body_paragraphs.length - 1 ? `<p><strong>${esc(p)}</strong></p>` : `<p>${esc(p)}</p>`).join('')}</div></section>
         <section id="journey" class="story-section"><p class="eyebrow">The Daddy Hunger Journey</p><h2>${esc(about.journey_heading)}</h2>${paragraphs(about.journey_paragraphs)}<div class="impact-list">${impacts}</div><p>${esc(about.journey_closing)}</p></section>
-        <section id="book" class="story-section book-callout"><div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"></div><div><p class="eyebrow light">${esc(settings.book_title)}</p><h2>${esc(settings.book_subtitle)}</h2><p class="release-line">Book Release · ${esc(settings.release_short)}</p>${paragraphs(about.book_description_paragraphs)}<blockquote>${esc(about.featured_quote)}</blockquote><a class="button gold" href="/guide.html">Join the Book Launch List</a></div></section>
+        <section id="book" class="story-section book-callout"><div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"></div><div><p class="eyebrow light">${esc(settings.book_title)}</p><h2>${esc(settings.book_subtitle)}</h2><p class="release-line">${esc(settings.release_short)}</p>${paragraphs(about.book_description_paragraphs)}<blockquote>${esc(about.featured_quote)}</blockquote><a class="button gold" href="/book.html#buy">Buy the Book</a></div></section>
         <section id="promises" class="story-section"><p class="eyebrow">The Five Promises</p><h2>${esc(about.promises_heading)}</h2><div class="promise-list detailed">${promises}</div><a class="button primary" href="/guide.html">Get the Free Fatherhood Guide</a></section>
         <section id="vision" class="story-section emphasized"><p class="eyebrow">The Vision</p><h2>${esc(about.vision_heading)}</h2><p>${esc(about.vision_intro)}</p><div class="platform-grid">${platforms}</div><p>${esc(about.vision_description)}</p><blockquote class="vision-quote">${esc(about.vision_quote)}</blockquote></section>
         <section id="speak" class="story-section"><p class="eyebrow">Invite Ray to Speak</p><h2>${esc(about.speaking_heading)}</h2><p>${esc(about.speaking_description)}</p><div class="button-row"><a class="button primary" href="/speaking.html">Invite Ray to Speak</a><a class="button outline" href="mailto:${esc(settings.contact_email)}">${esc(settings.contact_email)}</a></div></section>
@@ -253,14 +253,14 @@ function renderAbout(settings, about) {
 function renderBook(settings, book) {
   const readers = book.readers.map((r) => `<article><span>${esc(r.number)}</span><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p></article>`).join('');
   const body = `<main id="main">
-    <section class="book-page-hero"><div class="book-page-art"><div class="book-object large"><div class="book-spine"></div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"><div class="book-author">RAY UPCHURCH</div></div></div><div class="book-page-copy"><p class="eyebrow">${esc(book.hero_eyebrow)}</p><h1>${esc(settings.book_title)}</h1><p class="hero-subtitle">${esc(settings.book_subtitle)}</p><p class="hero-lead">${esc(book.hero_lead)}</p><p class="release-pill">Book Release · ${esc(settings.release_short)}</p>${bookPurchaseLinks(book, 'book-hero-purchase')}</div></section>
+    <section class="book-page-hero"><div class="book-page-art"><div class="book-object large"><div class="book-spine"></div><img src="${esc(settings.book_cover)}" alt="${esc(settings.book_title)} book cover"><div class="book-author">RAY UPCHURCH</div></div></div><div class="book-page-copy"><p class="eyebrow">${esc(book.hero_eyebrow)}</p><h1>${esc(settings.book_title)}</h1><p class="hero-subtitle">${esc(settings.book_subtitle)}</p><p class="hero-lead">${esc(book.hero_lead)}</p><p class="release-pill">${esc(settings.release_short)}</p>${bookPurchaseLinks(book, 'book-hero-purchase')}</div></section>
     <section class="section book-description"><div><p class="eyebrow">About the Book</p><h2>${esc(book.about_heading)}</h2></div><div>${paragraphs(book.about_paragraphs)}</div></section>
     <section class="quote-band"><div class="ornament">◆</div><blockquote>${esc(book.featured_quote)}</blockquote><div class="ornament">◆</div></section>
     <section class="section reader-section"><div class="section-heading centered narrow"><p class="eyebrow">Who This Book Is For</p><h2>${esc(book.reader_heading)}</h2></div><div class="reader-grid">${readers}</div></section>
     <section id="buy" class="launch-list-section book-buy-section"><div><p class="eyebrow light">The Book</p><h2>Get ${esc(settings.book_title)}.</h2><p>Order directly from Daddy Hunger Press through Bookspace, or use Amazon for Prime shipping.</p></div>${bookPurchaseLinks(book, 'dark-purchase')}</section>
     <section class="section cover-section"><div><img src="${esc(settings.book_spread)}" alt="Full book cover concept"></div><div><p class="eyebrow">Book Cover</p><h2>${esc(book.cover_heading)}</h2><p>${esc(book.cover_description)}</p><a class="text-link" href="/shop.html">Preview the merchandise direction <span>→</span></a></div></section>
   </main>`;
-  return pageShell({ settings, title: book.meta_title, description: book.meta_description, active: 'book', ctaLabel: 'Join the List', ctaUrl: '/guide.html', body });
+  return pageShell({ settings, title: book.meta_title, description: book.meta_description, active: 'book', ctaLabel: 'Buy the Book', ctaUrl: '#buy', body });
 }
 
 function renderGuide(settings, guide) {
@@ -277,6 +277,22 @@ function renderGuide(settings, guide) {
     <section class="closing-cta"><img src="${esc(settings.heart_logo)}" alt="" class="closing-mark"><p class="eyebrow light">${esc(settings.release_label)}</p><h2>${esc(settings.book_title)}</h2><p>${esc(settings.book_subtitle)}</p><a class="button gold" href="/book.html#buy">Buy the Book</a></section>
   </main>`;
   return pageShell({ settings, title: guide.meta_title, description: guide.meta_description, active: 'guide', ctaLabel: 'Free Guides', ctaUrl: '#download', announcementUrl: '#download', body });
+}
+
+
+function renderGuideThanks(settings, { pageTitle, heading, description, pdfUrl }) {
+  const body = `<main id="main">
+    <section class="guide-thanks-section">
+      <img src="${esc(settings.heart_logo)}" alt="" class="closing-mark">
+      <p class="eyebrow">Your Guide Is Ready</p>
+      <h1>${esc(heading)}</h1>
+      <p>${esc(description)}</p>
+      <a class="button primary guide-download-button" href="${esc(pdfUrl)}" target="_blank" rel="noopener">Download your guide</a>
+      <p class="guide-download-help">A copy is also being sent by email. If it lands in spam, you can download it here immediately.</p>
+      <div class="button-row"><a class="button outline" href="/guide.html">Explore Free Guides</a><a class="button text-button" href="/index.html">Return Home</a></div>
+    </section>
+  </main>`;
+  return pageShell({ settings, title: `${pageTitle} | Daddy Hunger`, description, active: 'guide', ctaLabel: 'Buy the Book', ctaUrl: '/book.html#buy', body });
 }
 
 function renderSpeaking(settings, speaking) {
@@ -344,6 +360,18 @@ function build() {
   writeFile('about.html', renderAbout(settings, about));
   writeFile('book.html', renderBook(settings, book));
   writeFile('guide.html', renderGuide(settings, guide));
+  writeFile('five-promises-thanks.html', renderGuideThanks(settings, {
+    pageTitle: 'Five Promises Guide',
+    heading: 'Your Five Promises Guide is ready.',
+    description: 'Thank you for joining Daddy Hunger. Download 5 Promises Every Child Needs From Their Father below.',
+    pdfUrl: settings.guide_pdf
+  }));
+  writeFile('language-guide-thanks.html', renderGuideThanks(settings, {
+    pageTitle: 'Daddy Hunger Language Guide',
+    heading: 'Your Daddy Hunger Language Guide is ready.',
+    description: 'Thank you for joining Daddy Hunger. Download The Daddy Hunger Language Guide below.',
+    pdfUrl: settings.language_guide_pdf
+  }));
   writeFile('speaking.html', renderSpeaking(settings, speaking));
   writeFile('shop.html', renderShop(settings, shop));
   writeFile('thanks.html', renderThanks(settings));

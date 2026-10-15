@@ -539,3 +539,11 @@ p { margin: 0 0 1.25em; }
 @media (max-width: 620px) {
   .book-purchase-block .button { width: 100%; justify-content: center; }
 }
+
+/* Lead magnet thank-you pages */
+.guide-thanks-section { min-height: 68vh; padding: 110px 24px 90px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--cream); }
+.guide-thanks-section h1 { max-width: 780px; margin: 12px auto 16px; }
+.guide-thanks-section > p:not(.eyebrow) { max-width: 650px; margin: 0 auto 26px; }
+.guide-download-button { margin-top: 6px; }
+.guide-download-help { font-size: 0.92rem; opacity: .72; margin-top: 14px !important; }
+.guide-thanks-section .button-row { margin-top: 18px; justify-content: center; }

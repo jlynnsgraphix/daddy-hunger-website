@@ -19,8 +19,8 @@ collections:
           - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Book Title", name: "book_title", widget: "string" }
           - { label: "Book Subtitle", name: "book_subtitle", widget: "string" }
-          - { label: "Release Label", name: "release_label", widget: "string", hint: "Example: Coming Fall 2026" }
-          - { label: "Release Short Label", name: "release_short", widget: "string", hint: "Example: Fall 2026" }
+          - { label: "Release Label", name: "release_label", widget: "string", hint: "Example: Now available" }
+          - { label: "Release Short Label", name: "release_short", widget: "string", hint: "Example: Now available" }
           - { label: "Contact Email", name: "contact_email", widget: "string" }
           - { label: "Copyright Line", name: "copyright", widget: "string" }
           - { label: "Heart Logo", name: "heart_logo", widget: "image" }
